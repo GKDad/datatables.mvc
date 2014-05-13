@@ -75,7 +75,7 @@ namespace DataTables.Mvc
         /// </summary>
         /// <param name="controllerContext">The context for the controller.</param>
         /// <param name="bindingContext">The context for the binding.</param>
-        /// <returns>Your model with all it's properties set.</returns>
+        /// <returns>Your model with all its properties set.</returns>
         public virtual object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             return Bind(controllerContext, bindingContext, typeof(DefaultDataTablesRequest));
@@ -88,7 +88,7 @@ namespace DataTables.Mvc
         /// <param name="controllerContext">The context for the controller.</param>
         /// <param name="bindingContext">The context for the binding.</param>
         /// <param name="modelType">The type of the model which will be created. Should implement IDataTablesRequest.</param>
-        /// <returns>Your model with all it's properties set.</returns>
+        /// <returns>Your model with all its properties set.</returns>
         protected virtual object Bind(ControllerContext controllerContext, ModelBindingContext bindingContext, Type modelType)
         {
             var request = controllerContext.RequestContext.HttpContext.Request;
@@ -111,7 +111,7 @@ namespace DataTables.Mvc
             var searchRegex = Get<bool>(requestParameters, "search[regex]");
             model.Search = new Search(searchValue, searchRegex);
 
-            // Get's the column collection from the request parameters.
+            // Gets the column collection from the request parameters.
             var columns = GetColumns(requestParameters);
 
             // Parse column ordering.
@@ -120,20 +120,20 @@ namespace DataTables.Mvc
             // Attach columns into the model.
             model.Columns = new ColumnCollection(columns);
 
-            // Map aditional properties into your custom request.
-            MapAditionalProperties(model, requestParameters);
+            // Map additional properties into your custom request.
+            MapAdditionalProperties(model, requestParameters);
 
             // Returns the filled model.
             return model;
         }
         /// <summary>
-        /// Map aditional properties (aditional fields sent with DataTables) into your custom implementation of IDataTablesRequest.
-        /// You should override this method to map aditional info (non-standard DataTables parameters) into your custom 
+        /// Map additional properties (additional fields sent with DataTables) into your custom implementation of IDataTablesRequest.
+        /// You should override this method to map additional info (non-standard DataTables parameters) into your custom 
         /// implementation of IDataTablesRequest.
         /// </summary>
         /// <param name="requestModel">The request model which will receive your custom data.</param>
         /// <param name="requestParameters">Parameters sent with the request.</param>
-        protected virtual void MapAditionalProperties(IDataTablesRequest requestModel, NameValueCollection requestParameters) { }
+        protected virtual void MapAdditionalProperties(IDataTablesRequest requestModel, NameValueCollection requestParameters) { }
         /// <summary>
         /// Resolves the NameValueCollection from the request.
         /// Default implementation supports only GET and POST methods.
@@ -148,8 +148,8 @@ namespace DataTables.Mvc
             else throw new ArgumentException(String.Format("The provided HTTP method ({0}) is not a valid method to use with DataTablesBinder. Please, use HTTP GET or POST methods only.", request.HttpMethod), "method");
         }
         /// <summary>
-        /// Get's a typed value from the collection using the provided key.
-        /// This method is provided as an option for you to override the default behavior and add aditional
+        /// Gets a typed value from the collection using the provided key.
+        /// This method is provided as an option for you to override the default behavior and add additional
         /// check or change the returned value.
         /// </summary>
         /// <typeparam name="T">The type of the object to be returned.</typeparam>
@@ -161,8 +161,8 @@ namespace DataTables.Mvc
             return collection.G<T>(key);
         }
         /// <summary>
-        /// Return's the column collection from the request values.
-        /// This method is provided as an option for you to override the default behavior and add aditional
+        /// Returns the column collection from the request values.
+        /// This method is provided as an option for you to override the default behavior and add additional
         /// check or change the returned value.
         /// </summary>
         /// <param name="collection">The request value collection.</param>

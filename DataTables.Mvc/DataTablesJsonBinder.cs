@@ -38,7 +38,7 @@ namespace DataTables.Mvc
     public abstract class DataTablesJsonBinder : IModelBinder
     {
         /// <summary>
-        /// Get's the JSON parameter name to retrieve data. 
+        /// Gets the JSON parameter name to retrieve data. 
         /// You may override this to change to your parameter.
         /// </summary>
         protected virtual string JSON_PARAMETER_NAME { get { return "json"; } }
@@ -56,7 +56,7 @@ namespace DataTables.Mvc
 
             // If the request type does not contains "JSON", it's supposed not to be a JSON request so we skip.
             if (!IsJsonRequest(request))
-                throw new ArgumentException("You must provide a JSON request and set it's content type to match a JSON request content type.");
+                throw new ArgumentException("You must provide a JSON request and set its content type to match a JSON request content type.");
 
             // Desserializes the JSON request using the .Net Json implementation.
             return Deserialize(bindingContext.ValueProvider.GetValue(JSON_PARAMETER_NAME).AttemptedValue);

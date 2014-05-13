@@ -34,7 +34,7 @@ namespace DataTables.Mvc
     /// </summary>
     /// <remarks>
     /// Variable syntax does NOT match DataTables names because auto-mapping won't work anyway.
-    /// Use the DataTablesModelBinder or provide your own binder to bind your model with DataTables's request.
+    /// Use the DataTablesModelBinder or provide your own binder to bind your model with DataTables request.
     /// </remarks>
     public interface IDataTablesRequest
     {

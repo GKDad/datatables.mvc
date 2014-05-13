@@ -55,7 +55,7 @@ namespace DataTables.Mvc
         /// </summary>
         public int recordsFiltered { get; private set; }
         /// <summary>
-        /// Creates a new DataTables response object with it's elements.
+        /// Creates a new DataTables response object with its elements.
         /// </summary>
         /// <param name="draw">The draw counter as received from the DataTablesRequest.</param>
         /// <param name="data">The data collection (data page).</param>

@@ -30,7 +30,7 @@ using System.Text;
 namespace DataTables.Mvc
 {
     /// <summary>
-    /// Represents a DataTables column for server-side parsing and work.
+    /// Represents a DataTable column for server-side parsing and work.
     /// </summary>
     public class Column
     {
@@ -39,7 +39,7 @@ namespace DataTables.Mvc
         /// </summary>
         public string Data { get; private set; }
         /// <summary>
-        /// Get's the name component (if any provided on client-side script).
+        /// Gets the name component (if any provided on client-side script).
         /// </summary>
         public string Name { get; private set; }
         /// <summary>
@@ -59,7 +59,7 @@ namespace DataTables.Mvc
         /// </summary>
         public bool IsOrdered { get { return OrderNumber != -1; } }
         /// <summary>
-        /// Indicates the column' position on the ordering (multi-column ordering).
+        /// Indicates the column's position on the ordering (multi-column ordering).
         /// </summary>
         public int OrderNumber { get; private set; }
         /// <summary>
